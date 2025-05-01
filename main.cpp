@@ -1,13 +1,15 @@
 #include <iostream>
 #include <iomanip>
 using namespace std;
-/*
-* Лабораторная работа No 1
-* Тема:
-*
+/* Лабораторная работа No 1
+* Тема: ввод и вывод
 * Developer: Марков Евгений Сергеевич, группа 318
 * OS: Windows
 * locale (кодировка): IBM 866
+* Размер .ехе файла:
+* в режиме debug 82 кб,
+* в режиме release 16 кб,
+* разница примерно в 5 раз
 */
 int main()
   {
