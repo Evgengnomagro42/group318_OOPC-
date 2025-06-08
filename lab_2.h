@@ -1,0 +1,19 @@
+#ifndef LAB_2_H
+#define LAB_2_H
+void calc_vesa();
+void task2();
+void print_size();
+void print_diapazon();
+void print_diapazon_bin();
+void vyvod_printf();
+void sredn_arifm();
+void v_exponent();
+void task5();
+void print_boolalpha();
+void logich_perem();
+void de_Morgan();
+void some_var();
+void sdvig_chisla();
+void priorit_assotiat();
+void calcr();
+#endif // LAB_2_H
