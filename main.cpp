@@ -20,7 +20,6 @@ int main() {
 #if Unit == 1
   cout << "Задание 1 ";  
   calc_vesa();
-  return 0;
 #elif Unit == 2
   cout << "Задание 2" << endl;
   task2();
