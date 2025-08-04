@@ -1,72 +1,23 @@
 /*
-* Лабораторная работа No 2
-* Тема:
+* Лабораторная работа No 3
+* Тема: виджет калькулятор
 *
 * Developer: Марков Евгений Сергеевич
-* OS: Windows
+* OS: Windows 10 home version
 * locale (кодировка): IBM 866
 */
-#include <iostream>
-#include <cmath>
-#include <limits>
-#include <iomanip>
-#include <stdio.h>
-#include <bitset>
-#include "lab_2.h"
-using namespace std;
-int main() {
+#include "mainwindow.h"
 
-#define Unit 5
-#if Unit == 1
-  cout << "Задание 1 ";  
-  calc_vesa();
-#elif Unit == 2
-  cout << "Задание 2" << endl;
-  task2();
-#elif Unit == 3
-  cout << "Задание 3" << endl;
-  sredn_arifm();
-#elif Unit == 4
-  cout << "Задание 4" << endl;
-  v_exponent();
-#elif Unit == 5
-  std::cout << "Задание 5" << std::endl;
-  task5();
-#elif Unit == 6
-  cout << "Задание 6" << endl;
-  calcr();
-#endif
+#include <QApplication>
 
-#if 0
-Задание 1 - Калькулятор веса
-#endif
+int main(int argc, char *argv[])
+{
+    QApplication a(argc, argv);
+    MainWindow w;
+    w.show();
+    return a.exec();
+}
 
-#if 0
-Задание 2 - Вывод размеров основных типов данных
-Вывод данных по разным модификациям длины и размера
-#endif
-
-#if 0
-Задание 3 - предложить пользователю ввести 10 чисел с плавающей точкой,
-а потом вывести на экран их среднее арифметическое, используя числа
-с плавающей точкой. Среднее арифметическое - это сумма нескольких
-слагаемых, разделённая на количество этих слагаемых
-#endif
-
-#if 0
-Задание 4 - переводить следующие числа из существующей записи в
-экспоненциальную запись в стиле языка C++ (используя букву е, как
-символ экспонента). Определите, сколько значащих цифр имеет каждое
-из следующих чисел, и выведите их на экран
-#endif
-
-#if 0
-Задание 5 - Логические выражения
-#endif
-
-#if 0
-Задание 6 - Калькулятор
-#endif
 
 
 
