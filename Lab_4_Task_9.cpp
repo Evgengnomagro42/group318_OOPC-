@@ -9,7 +9,7 @@
 #include <functional>
 #include "Lab_4.h"
 using namespace std;
-/*
+
 void print1(char (&numbers)[2][6], int count1, int count2) {
  for(int i{}; i < count1; ++i) {
       for(int j{}; j < count2; ++j) {
@@ -41,6 +41,7 @@ void print�(char (&numbers)[1][12], int count1, int count2) {
       };
     }
   }
+/*
 int main() {
     char nums1[2][6] {{1, 2, 3, 4, 5, 6},{11, 12, 13, 14, 15, 16}};
     int count1 = 2;
