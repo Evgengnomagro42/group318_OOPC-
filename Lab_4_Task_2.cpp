@@ -25,6 +25,7 @@
 #include <clocale>
 #include "Lab_4.h"
 using namespace std;
+
 void arr_5x5(){
 constexpr size_t N{5}, M{5};
  int arr[N][M] = { {1, 0, 0, 0, 0},
