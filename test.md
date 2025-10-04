@@ -1,256 +1,294 @@
 # Тестовые задания 
 
-## 1. Найдите в программе ошибки, представите ниже рабочий вариант программы. 
+## a) 
 ### X С ошибками
 ```cpp
-nt main() {//надо писать int
-short a;
-a(65599);  //выход за предел диапазона short
-int 5 = 4; //цифру нельзя в имя переменной
-int л = 4; //кириллицу нельзя в имя переменной
-char ch;   /*можно сразу
-ch{5};     * присвоить значения,
-float f;   * чтобы не писать
-f = 3,2;   * лишние строки*/
-}}         //вторая скобка лишняя
+void main( {                //нужна )
+ short array[]{1,3,5,7,9};   
+ short *ptr = array;
+ ptr = 111;                 //надо * перед ptr  
+ for (int i = 0; i < sizeof(array); ++i) //лучше size_t вместо int, не критично
+ std::cout << " Значение элемента " << i << ": " << array +i << '\n'; i надо в []
+}
 ```
 ### V Исправленый
 ```cpp
-int main{
-int a (65599);
-int a = 4; //цифру нельзя в имя переменной
-int b = 4;
-char ch{5};
-float f = 3,2;
+int main(){                
+ short array[]{1,3,5,7,9}; 
+ short *ptr = array;
+ *ptr = 111;
+ for (size_t i = 0; i < sizeof(array)/sizeof(array[0]); ++i)
+ std::cout << " Значение элемента " << i << ": " << array [i] << '\n';
+ }
 ```
 
-## 2. Какие значения выводит эта программа?
+## b)
+### X С ошибками
 ```cpp
-а) Почему z выводит неожиданные значения?
+//не обьявлена void Func
+int main() {
+ int array[size]{1,3,5,7,9};  //не указан size
+ Func(&array, size);          //& не надо
+}
+void Func(int *ptr, int size) {
+ for (int i = 0; i < size; ++i)
+//русские буквы недопустимы
+ std::cout << " Значение элемента " ББ<< ptr[i] << '\n';
+// для получения адреса нужен &. после i надо ] 
+ std::cout << " Адрес элемента " << ptr[i << '\n';
+}
+```
+### V Исправленый
+```cpp
+### V Исправленый
+```cpp
+int main(){                
+ short array[]{1,3,5,7,9}; 
+ short *ptr = array;
+ *ptr = 111;
+ for (size_t i = 0; i < sizeof(array)/sizeof(array[0]); ++i)
+ std::cout << " Значение элемента " << i << ": " << array [i] << '\n';
+ }
+```
+
+## c)
+### X С ошибками
+```cpp
 #include <iostream>
 int main() {
-int x = 5;
-x = x - 2;                       
-//a
-std::cout << x << std::endl; // #a     будет 3
-int y = x;
-//b
-std::cout << y << std::endl; // #b     будет 3
-//c
-std::cout << x + y << std::endl; // #c будет 6
-//d
-std::cout << x << std::endl; // #d     будет 3
-int z;
-//e
-std::cout << z << std::endl; // #e     будет неизвестно что,
-}                                      //z не инициализирована
-b)
-#include <iostream>
-int main() {
-int x = 1;
-x = x++;
-
-std::cout << x << "\n";                //будет 1
-}
-c)
-#include <iostream>
-int main(){
-int x = 1;
-std::cout << ++x << "\n";              //будет 2
-}
-```
-
-## 3. Найдите в программе ошибки, можно только что-то добавлять убирать нельзя, и выведите
-результат.
-### X С ошибками
-```cpp
-a)
-const int option_1 = 0;                                    
-const int option_2 = 1;                                   
-const int option_3 = 2;                                   
-const int option_4 = 3;                                   
-const int option_5 = 4;
-const int option_6 = 5;
-const int option_7 = 6;
-const int option_8{7};
-int main( { 
-//не хватает скобки )                                     
-bitset<8> bits(0x4);   /* не подключен
-bits.set(option_1);    *using namespace std,
-bits.flip(option_3);   * а std:: в коде
-bits.reset(option_7);  * отсутствует */
-cin << "Bit 1 has value: " << bits.test(option_1) << '/n';
-// надо писать cout вместо cin
-// надо \ вместо /
-cin << Bit 3 has value: " << bits.test() << '\n';         
-// "" надо по обе стороны выражения Bit...value:
-//не указан номер бита в (), 
-//надо писать cout вместо cin
-cin << "Bit 7 has value: " << bits.test() < '\n';         
-// надо 2 знака << перед '\n';  
-//не указан номер бита в (), 
-//надо писать cout вместо cin
-cin << "All the bits: " << bits << '\n;
-//надо ' после '\n
-}
-```
-### V Исправленый
-```cpp
-const int option_1 = 0;                                    
-const int option_2 = 1;                                   
-const int option_3 = 2;                                   
-const int option_4 = 3;                                   
-const int option_5 = 4;
-const int option_6 = 5;
-const int option_7 = 6;
-const int option_8 = 7;
-int main(){
-std::bitset<8> bits(0x4);   
-bits.set(option_1);    
-bits.flip(option_3);  
-bits.reset(option_7); 
-std::cout << "Bit 1 has value: " << bits.test(option_1) << '\n';
-std::cout << "Bit 3 has value: " << bits.test(option_3) << '\n';
-std::cout << "Bit 7 has value: " << bits.test(option_7) << '\n';
-std::cout << "All the bits: " << bits << '\n';
-```
-
-b)
-### X С ошибками
-```cpp
-int main()
-uint8_t a(1), uint8_t b(1), c(3
-// нет ) и ;
-// 2 раза написано uint8_t
-a = a < 1;
-рrintf("a: \n", a)
-// нет ; в конце строки
-// с uint8_t нужен std::cout
-b <<= 1;
-printf("b: \n", b);
-// нужен %d после "b:
-c |= 1;
-print("c: \n", );
-// нужен %d после "c:
-// нет с после \n",
-// нужен f в конце print
-```
-
-### V Исправленый
-```cpp
-int main(){
-uint8_t a(1), b(1), c(3);
- a = a << 1;
- std::cout << "a: " << a << '\n';
- b <<= 1;
- printf("b: %d\n", b);
- c |= 1;
- printf("c: %d\n", c)
-}
-```
-
-c)
-### X С ошибками
-```cpp
-int main() {
-int x (08);
-//в десятичном виде значение переменной 
-//должно быть без 0
-std::cout << "x: " << x < endl;
-// надо <<  вместо < и std:: перед endl
-int y = 0x5;
-std::cout << "y: " < y << stdendl;
-// надо <<  вместо < и :: перед endl
-int bin(0);
-bin = 0b101
-//надо ; 
-out << "bin 0b101: " << bin << std::endl
-//надо ;
-// надо std::c перед out
+ short value;
+ short *p;
+ p = value;  //надо & перед value
+ *p = value;
+ *p = &value;//Qt выдаёт ошибку
+ *p = *&value;
 }
 ```
 ### V Исправленый
 ```cpp
 int main() {
-int x (8);
-std::cout << "x: " << x << std::endl;
-int y = 0x5;
-std::cout << "y: " << y << std::endl;
-int bin(0);
-bin = 0b101;
-std::cout << "bin 0b101: " << bin << std::endl;
+ short value=5;
+ short *p;
+ p = &value;
+ *p = value;
+ *p = *&value;
 }
 ```
 
-d)
+## d)
 ### X С ошибками
 ```cpp
 int main() {
-int x{8};
-std::cout << "hex: " << h << x << ndl;
-// надо hex вместо h
-// надо std::e  перед ndl
-std::cout << "oct: " << o<< x << std::endl;
-// надо oct вместо o
-out << "dec: " << dec << x << std::endl;
-//надо std::c перед out
+ char cvalue;  //надо присвоить значение, иначе выведется мусор
+ int ivalue;   //надо присвоить значение, иначе выведется мусор
+ short * ps;   //указатель ни на что не указывает
+ char *pc;     //указатель ни на что не указывает
+ void *pv {(int*)(cvalue)};      //у cvalue тип данных char, а не int
+ void *pv_1 {(char*)(&ivalue)};  //у ivalue тип данных int, а не char
+               //нельзя преобразовать в выводе. 
+               //Сначала надо преобразовать, потом выводить
+ std::cout << "pv->int" << *static_cast<int>(pv) << std::endl;
+ int *pi = {(int)(pv)};
+               //преобразовали pv, а выводят pv_1
+ std::cout << "pi=" << pv_1 << std::endl;
+}
+```
+
+### V Исправленый
+```cpp
+int main() {
+ char cvalue=5;
+ int ivalue=15;
+ short * ps;
+ char *pc;
+ void *pv {(int*)(cvalue)};
+ void *pv_1 {(char*)(&ivalue)};
+ pv = static_cast<int*>(pv);
+ std::cout << "pv->int " << pv << std::endl;
+ int pi = (int)(pv);
+ std::cout << "pi " << pv << std::endl;
+}
+```
+
+## e)
+### X С ошибками
+```cpp
+int main() {
+short value, value1(3);   //без значения - выведется мусор
+ short &ref;               //нельзя делать указатель без инициализации
+ const short &ref1 = value;
+ const short &ref2 = 78;
+ ref1 = 3;                 //нельзя присвоить другое значение константе
+ *&value = 4;
+//* надо после типа данных, второй const лишний
+ const *short const p3; 
+}
+```
+### V Исправленый
+```cpp
+short value, value1(3);
+ // short &ref;
+ const short &ref1 = value;
+ const short &ref2 = 78;
+ //ref1 = 3;
+ *&value = 4;
+ const short* p3;
+}
+```
+
+# Исправьте ошибки можно что-то добавлять а удалять нельзя.
+## g)
+### X С ошибками
+```cpp
+ int main() {
+int value1 45;     //надо = перед r-value 
+int value 63;      //надо = перед r-value
+int *ptr = &value; 
+*ptr = &value;     //надо  без * в r-value
+ptr = value;       //надо * в r-value
+                   //надо * перед ptr
+std::cout << "Результат value1 + value2 : " << value1 + ptr << '\n';
 }
 ```
 ### V Исправленый
 ```
-int main() {
-int x {8};
- cout.unsetf(ios::dec);
- std::cout << "hex: " << hex << x << std::endl;
- std::cout << "oct: " << oct << x << std::endl;
- std::cout << "dec: " << dec << x << std::endl;
+ int main() {
+  int value1 = 45;
+    int value = 63;
+    int *ptr = &value;
+    ptr = &value;
+    *ptr = value;
+    std::cout << "Результат value1 + value2 : " << value1 + *ptr << '\n';
 }
 ```
 
-## 4 Вычислите следующие выражения:
-```cpp
-a) (true или false):
-(true && true) || false
-(false && true) || true
-(false && true) || false || true
-(5 > 6 || 4 > 3) && (7 > 8)
-!(7 > 6 || 3 > 4)
+# Исправьте ошибки можно что-то добавлять а удалять нельзя.
+## a)
+### X С ошибками
+```
+ int main() {
+std::cout << "Hi !\n";
+ //если надо, чтобы следующая строка не выполнялась,
+ // то надо писать (0) после exit
+ exit;
+ std::cout << 3 //надо ; после 3
+//программа выведет Hi !, в следующей строке 3
+```
 
-int main (){
-cout.setf(ios::boolalpha);
-cout << "((true && true) || false): " <<
-((true && true) || false) << endl;
-cout << "((false && true) || true): " <<
-((false && true) || true) << endl;
-cout << "((false && true) || false || true): " <<
-((false && true) || false || true) << endl;
-cout << "((5 > 6 || 4 > 3) && (7 > 8)): " <<
-((5 > 6 || 4 > 3) && (7 > 8)) << endl;
-cout << "(!(7 > 6 || 3 > 4)): " <<
-(!(7 > 6 || 3 > 4)) << endl;
+### V Исправленый
+```
+int main() {
+std::cout << "Hi !\n";
+ std::cout << 3;  
+}
+```
+
+## b)
+### X С ошибками
+```
+int main() {
+switch (2) {
+//после case надо : , и break (кроме случаев,
+//когда надо выполнить все кейсы, но это должно
+//быть отражено в комментарии к коду
+ case 1
+ std::cout << 1 << '\n';
+ case 2                  //после case надо :
+ std::cout << 2 << '\n'  //надо ; в конце стейтмента
+ case                    // надо номер кейса
+ std::cout << 3 << '\n';
+ case 4                   //после case надо :
+ std::cout << 4 << '\n'   //надо ; в конце стейтмента
+ default:
+ std::cout << 5 << '\n';
+ //надо } в конце switch
+ //надо } в конце тела функции
+```
+
+### V Исправленый
+```
+int main() {
+switch (2) {
+     case 1:
+     std::cout << 1 << '\n';
+     break;
+     case 2:
+     std::cout << 2 << '\n';
+     break;
+     case 3:
+     std::cout << 3 << '\n';
+     break;
+     case 4:
+     std::cout << 4 << '\n';
+     break;
+     default:
+     std::cout << 5 << '\n';
+     break;
+    }
+}
+```
+
+## c)
+### X С ошибками
+```
+const int size = 5;
+void Func(int ptr, int size) { //надо * перед ptr
+ for (int i = 0; i < size; ++i)
+//чтобы первому элементу массива присвоить значение 5,
+// строку *ptr = 5; надо над cout << ptr[i];
+//для увеличения следующих элементов кратно первому, 
+// надо писать ptr[i+1]=*ptr+ptr[i]; вместо cout << *ptr++;
+ std::cout << ptr[i] << '\n';  
+ ptr = 5;                      //надо * перед ptr
+ std::cout << '\n';
+ for (int i = 0; i < size; ++i)
+//чтобы первому элементу массива присвоить значение 55,
+// строку *ptr = 55; надо над cout << *ptr++;
+//для увеличения следующих элементов кратно первому, 
+// надо писать ptr[i+1]=*ptr+ptr[i]; вместо cout << *ptr++;
+/*такой вариант приведет к выводу *ptr из 1-го цикла,
+*если он не закомментирован. Если закомментирован,
+*то выведется 1-й элемент массива из int main, а остальные
+* элементы все будут равны значению *ptr из этого цикла*/
+ std::cout << *ptr++ << '\n';  
+ *ptr = 55; 
+ std::cout << '\n';
 }
 
-
-b) Какой результат 0110 >> 2 в двоичной системе счисления?
-// Получится 0001
-c) Какой результат 5 & 12 в десятичной системе счисления?
-int main (){ 
-uint8_t a(5), b(12);
-char c = a&b;
-std::cout << (a&b)<<'\n'; //4
-printf("d: %d \n", c);    //4
+int main() {
+ int array[];
+ Func(array, size);
+//лишние строки, будет повторный вывод 2-го  цикла
+ for (int i = 0; i < size; ++i)
+ std::cout << array[i] << '\n';
 }
 
-d) Какой результат 5 ^ 12 в десятичной системе счисления?
-int main (){ 
-uint8_t e(5), f(12);
-char d = e^f;
-std::cout << (e^f)<<'\n';//9
-printf("d: %d \n", d);   //9
+```
+
+### V Исправленый
+```
+const int size = 5;
+void Func(int *ptr, int size) { 
+ for (int i = 0; i < size; ++i)
+ {
+     *ptr = 5;
+     ptr[i+1]=*ptr+ptr[i];
+     std::cout << ptr[i] << '\n';
+ } // вывод элементов масива в цикле
+  // первому элементу массива присваиваем значение 5
+ std::cout << '\n';
+ for (int i = 0; i < size; ++i)
+ {
+     *ptr = 55;
+     ptr[i+1]=*ptr+ptr[i];
+     std::cout << ptr[i] << '\n';
+ }// вывод элементов масива в цикле
+  // первому элементу массива присваиваем значение 55
+ std::cout << '\n';
 }
-5 Конвертируйте двоичное число 0100 1101 в десятичную систему счисления.
-//(0100 1101) = 77
-int main (){ 
- cout << (128*0)+(64*1)+(32*0)+(16*0)+(8*1)+(4*1)+(2*0)+(1*1) << endl;
+
+int main() {
+    int array[size]{10,20,30,40,50};
+ Func(array, size); 
 }
 ```
