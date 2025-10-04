@@ -25,7 +25,7 @@
 #include <clocale>
 #include "Lab_4.h"
 using namespace std;
-/*
+
 void SelectionSort_char(char array[], int size) {
   for (int startIndex = 0; startIndex < size; ++startIndex) {
     int smallestIndex = startIndex;
@@ -236,7 +236,7 @@ void tip_dann_i_kolich_elem(){
         goto skip;
         break;
     }
-  }*/
+  }
 /*
 int main() {
     tip_dann_i_kolich_elem();
