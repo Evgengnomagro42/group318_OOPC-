@@ -136,6 +136,34 @@ short value, value1(3);
 }
 ```
 
+## f)
+### X С ошибками
+```cpp
+ int main() {
+ short value = 13;
+ short value_1 = 100;
+ short *ptr = &value;
+ std::cout << &value << '\n';
+ std::cout << (value +=1) << '\n';
+ ptr = 9;                                      // надо * перед ptr
+ std::cout << (value = value_1 + *ptr) << '\n';
+ std::cout << "Результат: " << value << '\n';
+}
+```
+### V Исправленый
+```cpp
+ int main() {
+ short value = 13;
+ short value_1 = 100;
+ short *ptr = &value;
+ std::cout << &value << '\n';
+ std::cout << (value +=1) << '\n';
+ ptr = 9;                                      
+ std::cout << (value = value_1 + *ptr) << '\n';
+ std::cout << "Результат: " << value << '\n';
+}
+```
+
 # Исправьте ошибки можно что-то добавлять а удалять нельзя.
 ## g)
 ### X С ошибками
