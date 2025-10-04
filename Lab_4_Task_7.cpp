@@ -26,7 +26,6 @@
 #include "Lab_4.h"
 using namespace std;
 
-/*
 using ref_digit_t = int;
 typedef string ref_str_t;
 
@@ -46,6 +45,7 @@ void generate_placements(std::vector<ref_str_t>& arr,
     std::swap(arr[S], arr[I]); //Backtracking
     }
   }
+/*
 int main() {
   std::vector<ref_str_t> elements = {"u1","u2","v1","v2","w1","w2"};
   ref_digit_t K; // ������ ࠧ��饭��
