@@ -17,7 +17,7 @@
 #include <chrono>
 #include "Lab_4.h"
 using namespace std;
-/*
+
 unsigned int PRNG_start_cikl(short c) {
   static unsigned seed = ((unsigned int)(time(0)));
   const unsigned range{1000};
@@ -129,7 +129,7 @@ void PRNG_users_var(){
         goto skip;
         break;
       }
-    }*/
+    }
 /*
 int main() {
     PRNG_users_var();
