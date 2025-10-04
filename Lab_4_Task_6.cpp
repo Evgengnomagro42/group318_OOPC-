@@ -25,7 +25,7 @@
 #include <clocale>
 #include "Lab_4.h"
 using namespace std;
-/*
+
 void adr_i_ykaz () {
   cout<<"������ �� ���祭�� - 楫�� �᫮, �஡��� �᫮, ��������� �㪢�"<<'\n';
   short m;
@@ -70,7 +70,7 @@ void printArrayPoYkaz(){
     <<"����� ���祭�� "<<*ptr3<<'\n';
     cout<<"������� � �����ᮬ 4 � ���ᮬ "<<ptr4<<' '
     <<"����� ���祭�� "<<*ptr4<<'\n';
-}*/
+}
 /*
 int main() {
   adr_i_ykaz ();
