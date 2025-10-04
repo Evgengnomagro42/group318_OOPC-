@@ -24,8 +24,8 @@
 #include <functional>
 #include <clocale>
 #include "Lab_4.h"
-//using namespace std;
-/*
+using namespace std;
+
 void printASCII(){
   for(char ch = 'a';ch<='z';++ch){
     std::cout<< setw(5) << ch << ' ' << (int)ch<<' ';
@@ -36,6 +36,7 @@ void printASCII(){
       if((ch-1)%5==0)cout<< std::endl;
     }
   }
+/*
 int main ( ){
   printASCII();
   }
