@@ -24,7 +24,7 @@
 #include <functional>
 #include <clocale>
 #include "Lab_4.h"
-/*using namespace std;
+using namespace std;
 void arr_5x5(){
 constexpr size_t N{5}, M{5};
  int arr[N][M] = { {1, 0, 0, 0, 0},
@@ -79,7 +79,7 @@ void PRNG_diap_ykaz() {
         }cout << '\n';
       }cout<<"�㬬� ������⮢ ��� ������� ��������� = "<<x<<'\n';
     }
-
+/*
 int main ( ){
   PRNG_diap_ssilka();
   cout<<'\n';
