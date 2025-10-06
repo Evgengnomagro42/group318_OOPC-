@@ -48,6 +48,10 @@ void tip_dann_i_kolich_elem();
 //task_6
 void adr_i_ykaz ();
 void printArrayPoYkaz();
+//task 7
+using ref_digit_t = int;
+typedef string ref_str_t;
+void generate_placements(std::vector<string>& arr, int start,int end,int k) ;
 //task_8
 int (I_Printf(int x,int y));
 int I_Cout(int x,int y);
